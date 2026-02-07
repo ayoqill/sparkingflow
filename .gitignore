@@ -1,0 +1,24 @@
+# Airflow logs
+logs/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+*.egg-info/
+dist/
+build/
+
+# Docker volumes
+.docker/
+
+# Environment
+.env
+
+# OS
+.DS_Store
+Thumbs.db

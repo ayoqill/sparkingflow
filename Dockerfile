@@ -10,4 +10,4 @@ ENV JAVA_HOME /usr/lib/jvm/java-11-openjdk-amd64
 
 USER airflow
 
-RUN pip install apache-airflow apache-airflow-providers-apache-spark pyspark
+RUN pip install --no-deps apache-airflow-providers-apache-spark==4.1.3 pyspark==3.5.0
