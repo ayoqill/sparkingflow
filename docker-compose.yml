@@ -1,5 +1,5 @@
 x-spark-common: &spark-common
-  image: apache/spark:3.5.0
+  image: apache/spark:3.4.1  # Match PySpark version (compatible with Python 3.8)
   volumes:
     - ./jobs:/opt/spark/jobs
   networks:

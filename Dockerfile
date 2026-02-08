@@ -1,13 +1,12 @@
-FROM apache/airflow:2.7.1-python3.11
+FROM apache/airflow:2.7.1-python3.8
 
 USER root
-RUN apt-get update && \
-    apt-get install -y gcc python3-dev openjdk-11-jdk && \
-    apt-get clean
-
-# Set JAVA_HOME environment variable (auto-detect architecture)
-ENV JAVA_HOME /usr/lib/jvm/java-11-openjdk-amd64
+RUN apt-get update && apt-get install -y openjdk-11-jdk && apt-get clean
 
 USER airflow
+RUN pip install --no-cache-dir \
+    apache-airflow==2.7.1 \
+    apache-airflow-providers-apache-spark==4.1.3 \
+    pyspark==3.4.1  # Compatible with Python 3.8
 
-RUN pip install --no-deps apache-airflow-providers-apache-spark==4.1.3 pyspark==3.5.0
+ENV SPARK_HOME=/home/airflow/.local/lib/python3.8/site-packages/pyspark

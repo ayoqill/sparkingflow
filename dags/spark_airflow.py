@@ -1,0 +1,43 @@
+import airflow
+from airflow import DAG
+from airflow.operators.python import PythonOperator
+from airflow.providers.apache.spark.operators.spark_submit import SparkSubmitOperator
+
+dag = DAG(
+    dag_id='sparkingflow',
+    default_args={
+        'owner': 'Aqil Aiman',
+        'start_date': airflow.utils.dates.days_ago(1)
+    },
+    schedule_interval='@daily'
+)
+
+start = PythonOperator(
+    task_id='start_task',
+    python_callable=lambda: print("Jobs started or Starting the Spark Airflow DAG"),
+    dag=dag
+)
+
+python_job = SparkSubmitOperator(
+    task_id='spark_job',
+    application='jobs/python/wordcountjob.py',
+    conn_id='spark_conn',
+    conf={
+        'spark.master': 'spark://sparkingflow-spark-master-1:7077',
+        'spark.pyspark.python': '/usr/bin/python3',
+        'spark.pyspark.driver.python': '/usr/bin/python3'
+    },
+    env_vars={
+        'PYSPARK_PYTHON': '/usr/bin/python3',
+        'PYSPARK_DRIVER_PYTHON': '/usr/bin/python3'
+    },
+    dag=dag
+)
+
+end = PythonOperator(
+    task_id='end_task',
+    python_callable=lambda: print("Jobs completed successfully"),
+    dag=dag
+)
+
+start >> python_job >> end
