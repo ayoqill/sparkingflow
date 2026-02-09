@@ -1,4 +1,4 @@
-# sparkingflow = Spark and Airflow hehehe
+# sparkingflow = Spark and Airflow 
 
 Simple Architecture Explanation
 Think of this like a data processing factory with different departments:
@@ -43,3 +43,7 @@ Results are saved, Postgres records what happened
 You check the Webserver to see if it worked
 
 In short: Scheduler = automatic timer that runs your data jobs on schedule! ⏰
+
+
+
+# Creating job with python
