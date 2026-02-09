@@ -57,3 +57,5 @@ Setup task/ spark job in airflow
 Sparkmaster UI
 <img width="1918" height="937" alt="sparkmaster" src="https://github.com/user-attachments/assets/51d0cbd3-60e9-4fa3-b4ba-2df3d1612679" />
 
+Result in airflow log
+
