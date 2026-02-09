@@ -80,7 +80,7 @@ sbt -  Its primary purpose is to automate tasks such as compiling, running, test
 
 
 Task with Scala
-
-
+<img width="1911" height="918" alt="scala task" src="https://github.com/user-attachments/assets/57bbfa53-03a8-4fc9-b2a2-fa3e057a09f8" />
 
 Output with Scala
+<img width="810" height="142" alt="output scala" src="https://github.com/user-attachments/assets/40b14f6b-7ffd-4a2b-bb09-8a456a8ebfdc" />
