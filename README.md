@@ -47,3 +47,13 @@ In short: Scheduler = automatic timer that runs your data jobs on schedule! ⏰
 
 
 # Creating job with python
+
+Docker container
+<img width="1567" height="887" alt="dockersparkingflowContainer" src="https://github.com/user-attachments/assets/68162a88-c624-4aaa-a0ee-8d791aad67af" />
+
+Setup task/ spark job in airflow
+<img width="1915" height="932" alt="setup job spark" src="https://github.com/user-attachments/assets/1b0a2edd-6704-450d-a68c-3e7c7c6e2045" />
+
+Sparkmaster UI
+<img width="1918" height="937" alt="sparkmaster" src="https://github.com/user-attachments/assets/51d0cbd3-60e9-4fa3-b4ba-2df3d1612679" />
+
