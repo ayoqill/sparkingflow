@@ -34,10 +34,23 @@ python_job = SparkSubmitOperator(
     dag=dag
 )
 
+
+scala_job = SparkSubmitOperator(
+    task_id='spark_scala_job',
+    application='jobs/scala/target/scala-2.12/wordcount_2.12-0.1.jar',
+    java_class='WordCount',
+    name='scala-word-count',
+    conn_id='spark_conn',
+    conf={
+        'spark.master': 'spark://sparkingflow-spark-master-1:7077'
+    },
+    dag=dag
+)
+
 end = PythonOperator(
     task_id='end_task',
     python_callable=lambda: print("Jobs completed successfully"),
     dag=dag
 )
 
-start >> python_job >> end
+start >> python_job >> scala_job >> end
