@@ -7,6 +7,8 @@ USER airflow
 RUN pip install --no-cache-dir \
     apache-airflow==2.7.1 \
     apache-airflow-providers-apache-spark==4.1.3 \
-    pyspark==3.4.1  # Compatible with Python 3.8
+    pyspark==3.4.1
 
 ENV SPARK_HOME=/home/airflow/.local/lib/python3.8/site-packages/pyspark
+ENV PYSPARK_PYTHON=python3.8
+ENV PYSPARK_DRIVER_PYTHON=python3.8

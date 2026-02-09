@@ -24,12 +24,12 @@ python_job = SparkSubmitOperator(
     conn_id='spark_conn',
     conf={
         'spark.master': 'spark://sparkingflow-spark-master-1:7077',
-        'spark.pyspark.python': '/usr/bin/python3',
-        'spark.pyspark.driver.python': '/usr/bin/python3'
+        'spark.pyspark.python': 'python3.8',
+        'spark.pyspark.driver.python': 'python3.8'
     },
     env_vars={
-        'PYSPARK_PYTHON': '/usr/bin/python3',
-        'PYSPARK_DRIVER_PYTHON': '/usr/bin/python3'
+        'PYSPARK_PYTHON': 'python3.8',
+        'PYSPARK_DRIVER_PYTHON': 'python3.8'
     },
     dag=dag
 )
