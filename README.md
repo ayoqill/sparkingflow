@@ -61,5 +61,17 @@ Result in airflow log
 
 <img width="518" height="76" alt="result in airflow log" src="https://github.com/user-attachments/assets/5cac922a-9755-4192-9778-5dcbf1b9c4e6" />
 
+Notes !!!
+In real-world industry practice, viewing results in Airflow logs is NOT the standard approach. Here are the common methods:
+
+Industry Best Practices for Spark Output:
+1. Write to Data Storage (Most Common) ⭐
+   Store results in databases or data lakes
+2. Cloud Storage (Production Standard) ⭐⭐⭐ (write parquet)
+   AWS S3, Azure Blob storage, Google Cloud Storage
+3. Data Warehouse (Analytics) ⭐⭐
+   Snowflake, Redshift, BigQuery
+4. Task Metadata/XComs (Small Results Only)
+  For small outputs, use Airflow XComs
 
 # Creating job with Scala
