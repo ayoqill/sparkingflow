@@ -74,4 +74,13 @@ Industry Best Practices for Spark Output:
 4. Task Metadata/XComs (Small Results Only)
   For small outputs, use Airflow XComs
 
-# Creating job with Scala
+# Creating job with Scala must use sbt (simple build tool)
+sbt -  Its primary purpose is to automate tasks such as compiling, running, testing, and packaging code, especially as projects grow in size and complexity. 
+
+
+
+Task with Scala
+
+
+
+Output with Scala

@@ -2,6 +2,7 @@ import airflow
 from airflow import DAG
 from airflow.operators.python import PythonOperator
 from airflow.providers.apache.spark.operators.spark_submit import SparkSubmitOperator
+import airflow.utils.dates
 
 dag = DAG(
     dag_id='sparkingflow',
@@ -34,12 +35,11 @@ python_job = SparkSubmitOperator(
     dag=dag
 )
 
-
+# Add Scala Spark Job
 scala_job = SparkSubmitOperator(
     task_id='spark_scala_job',
     application='jobs/scala/target/scala-2.12/wordcount_2.12-0.1.jar',
     java_class='WordCount',
-    name='scala-word-count',
     conn_id='spark_conn',
     conf={
         'spark.master': 'spark://sparkingflow-spark-master-1:7077'
@@ -49,8 +49,9 @@ scala_job = SparkSubmitOperator(
 
 end = PythonOperator(
     task_id='end_task',
-    python_callable=lambda: print("Jobs completed successfully"),
+    python_callable=lambda: print("Jobs completed successfully!"),
     dag=dag
 )
 
+# Define task dependencies
 start >> python_job >> scala_job >> end
