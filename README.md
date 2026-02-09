@@ -58,6 +58,7 @@ Sparkmaster UI
 <img width="1918" height="937" alt="sparkmaster" src="https://github.com/user-attachments/assets/51d0cbd3-60e9-4fa3-b4ba-2df3d1612679" />
 
 Result in airflow log
+
 <img width="518" height="76" alt="result in airflow log" src="https://github.com/user-attachments/assets/5cac922a-9755-4192-9778-5dcbf1b9c4e6" />
 
 
